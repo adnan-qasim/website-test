@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html"%}
+{%block body_block %}
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="border border-4 border-opacity-25 rounded-4">
+        <div class="container px-10 text-center">
+            <br><br>
+
+        {% if Login %} 
+            <h1>Logged In Successfully ;) </h1>
+            <a class="btn btn-outline-primary btn-lg" role="link" href="{% url 'index' %}">Return to Index Page</a><br><br>
+        {% else %}
+            <form method="post">
+                <div class="mb-3">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1"><p>Keep me Signed In</p></label></div>
+                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                </div>
+            </form>
+        {% endif %}
+        <br>
+    </div></div></div>
+{% endblock %}

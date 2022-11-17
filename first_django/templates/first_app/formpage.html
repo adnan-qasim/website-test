@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html"%}
+{%block body_block %}
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="border border-4 border-opacity-25 rounded-4">
+        <div class="container px-10 text-center">
+            <br><br>
+        <form method="post">
+            <div class="mb-3">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                    <label class="form-check-label" for="exampleCheck1"><p>I Agree to Terms & Comditions</p></label></div>
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </form>
+        <br>
+    </div></div></div>
+{% endblock %}
